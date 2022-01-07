@@ -1,4 +1,4 @@
-package com.company.Queues;
+package com.company.Array;
 
 import java.util.List;
 import java.util.PriorityQueue;
