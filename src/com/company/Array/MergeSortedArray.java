@@ -16,13 +16,10 @@ public class MergeSortedArray {
         int i = 0, j = 0, k = 0;
 
         while (i < X.length && j < Y.length){
-            if (X[i] < Y[j]){
-                mergedArray[k++] = X[i];
-                i++;
-            } else {
-                mergedArray[k++] = Y[j];
-                j++;
-            }
+            if (X[i] < Y[j])
+                mergedArray[k++] = X[i++];
+            else
+                mergedArray[k++] = Y[j++];
         }
 
         while (i < X.length)
