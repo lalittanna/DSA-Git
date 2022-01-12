@@ -1,7 +1,9 @@
 package com.company.Array;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class LargestConsecutiveSubArray {
     /*
@@ -29,6 +31,9 @@ Output: [-1, 0, 2, 1] or [6, 5, 8, 7]
         int length = 1;
 
         for (int i = 0; i < nums.size() - 1; i++){
+            Set<Integer> set = new HashSet<>();
+            set.add(nums.get(i));
+
             int min = nums.get(i);
             int max = nums.get(i);
 
@@ -36,11 +41,16 @@ Output: [-1, 0, 2, 1] or [6, 5, 8, 7]
                 min = Integer.min(min, nums.get(j));
                 max = Integer.max(max, nums.get(j));
 
-                if (isConsecutive(nums, min, max, i, j)){
+                if (set.contains(nums.get(j)))
+                    break;
+
+                set.add(nums.get(j));
+
+                if (max == min + j - i){
                     if (length < j - i + 1){
                         length = j - i + 1;
-                        start = i;
                         end = j;
+                        start = i;
                     }
                 }
             }
@@ -51,24 +61,5 @@ Output: [-1, 0, 2, 1] or [6, 5, 8, 7]
         }
 
         return list;
-    }
-
-    public static boolean isConsecutive(List<Integer> nums, int min, int max, int i, int j){
-        // for it to be consecutive, max would always be min + length of sub array - 1.
-        if (max != min + j - i)
-            return false;
-
-        // to check if the element is seen before in the sub array.
-        boolean[] visited = new boolean[j - i + 1];
-
-        for (int k = i; k <= j; k++){
-            // (nums.get(k) - min) -> this value would always be between 0 and length of sub array - 1.
-            if (visited[nums.get(k) - min])
-                return false;
-
-            visited[nums.get(k) - min] = true;
-        }
-
-        return true;
     }
 }
