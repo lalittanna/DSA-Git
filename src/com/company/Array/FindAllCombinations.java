@@ -48,7 +48,7 @@ Output: {[]}
             return;
         }
 
-        //
+        // recursion
         for (int j = i; j < nums.size(); j++){
             list.add(nums.get(j));
             findCombinations(nums, j + 1, k - 1, subarrays, list);
