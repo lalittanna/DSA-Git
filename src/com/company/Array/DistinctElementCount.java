@@ -1,9 +1,6 @@
 package com.company.Array;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class DistinctElementCount {
     /*
@@ -33,13 +30,38 @@ public class DistinctElementCount {
     {
         List<Integer> list = new ArrayList<>();
 
-        for (int i = 0; i < nums.size() - (k - 1); i++){
-            Set<Integer> set = new HashSet<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-            set.addAll(nums.subList(i, i + k));
-            list.add(set.size());
+        int distinct = 0;
+
+        for (int i = 0; i < nums.size(); i++){
+            if (i >= k){
+                map.put(nums.get(i - k), map.getOrDefault(nums.get(i - k), 0) - 1);
+
+                if (map.get(nums.get(i - k)) == 0)
+                    distinct--;
+            }
+
+            map.put(nums.get(i), map.getOrDefault(nums.get(i), 0) + 1);
+
+            if (map.get(nums.get(i)) == 1)
+                distinct++;
+
+            if (i >= k - 1)
+                list.add(distinct);
         }
 
         return list;
+
+        // List<Integer> list = new ArrayList<>();
+
+        // for (int i = 0; i < nums.size() - (k - 1); i++){
+        // 	Set<Integer> set = new HashSet<>();
+
+        // 	set.addAll(nums.subList(i, i + k));
+        // 	list.add(set.size());
+        // }
+
+        // return list;
     }
 }
