@@ -39,8 +39,14 @@ public class MinAndMax {
 
         // if size is divisible by 2
         if (nums.length % 2 == 0){
-            min = Integer.min(nums[0], nums[1]);
-            max = Integer.max(nums[0], nums[1]);
+            if (nums[0] > nums[1]){
+                max = nums[0];
+                min = nums[1];
+            }else{
+                max = nums[1];
+                min = nums[0];
+            }
+
             i = 2;
         }
 
