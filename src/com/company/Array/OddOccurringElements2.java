@@ -1,7 +1,7 @@
 package com.company.Array;
 
 
-public class OddOccuringElements2 {
+public class OddOccurringElements2 {
     /*
 
 Given an integer array, duplicates appear in it an even number of times except for two elements, which appear an odd number of times. Find both odd appearing elements without using any extra memory.
