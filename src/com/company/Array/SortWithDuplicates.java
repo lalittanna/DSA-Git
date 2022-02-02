@@ -43,13 +43,13 @@ Constraints:
             return;
         }
 
-        Pair<Number, Number> pivotPair = partition(nums, start, end);
+        Pair pivotPair = partition(nums, start, end);
 
         quickSort(nums, start, pivotPair.getX());
         quickSort(nums, pivotPair.getY(), end);
     }
 
-    public static Pair<Number, Number> partition(int[] nums, int start, int end){
+    public static Pair partition(int[] nums, int start, int end){
         int mid = start;
         int pivot = nums[end];
 
@@ -65,7 +65,7 @@ Constraints:
                 mid++;
         }
 
-        return new Pair<Number, Number>(start - 1, mid);
+        return new Pair(start - 1, mid);
     }
 
     public static void swap(int[] nums, int i, int j){
