@@ -23,12 +23,20 @@ class Interval
 }
 
 public class MergingOverlappingIntervals {
+    /*
+
+Given a set of intervals, return all non-overlapping intervals after merging the overlapping intervals.
+
+Input : [(1, 5), (2, 3), (4, 6), (7, 8), (8, 10), (12, 15)]
+Output: {(1, 6), (7, 10), (12, 15)}
+
+*/
+
     /* The Interval class have
 		1. Two non-final public member variables, begin and end.
 		2. Factory method `Interval.of(begin, end)` for creating its immutable instance.
 		3. equals() and hashCode() methods overridden.
 	*/
-
     public static Set<Interval> mergeIntervals(List<Interval> intervals){
         Set<Interval> set = new HashSet<>();
 
