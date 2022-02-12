@@ -1,6 +1,7 @@
 package com.company.Array;
 
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class KthSmallestElement {
     /*
@@ -19,6 +20,13 @@ public class KthSmallestElement {
     public static int findKthSmallest(List<Integer> nums, int k)
     {
         return quickSelect(nums, 0, nums.size() - 1, k - 1);
+
+//        PriorityQueue<Integer> minHeap = new PriorityQueue<>(nums);
+//
+//        while (k-- > 1)
+//            minHeap.poll();
+//
+//        return minHeap.poll();
     }
 
     public static int quickSelect(List<Integer> nums, int low, int high, int k){
