@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Math;
 
 public class SumOfSquareNumbers {
     // Sum of square of first 'n' natural numbers.

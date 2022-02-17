@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Math;
 
 public class SumEvenNumbers {
     // return the sum of all even positive integers less than or equal to n.

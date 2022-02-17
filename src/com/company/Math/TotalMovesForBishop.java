@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Math;
 
 public class TotalMovesForBishop {
 //    Given the position of a Bishop (A, B) on an 8 * 8 chessboard.

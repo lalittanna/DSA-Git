@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Math;
 
 public class CheckEvenOrOdd {
     // return true if input is odd without using multiplication, modulus, or division.
