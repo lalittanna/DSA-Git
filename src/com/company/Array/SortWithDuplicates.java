@@ -16,17 +16,12 @@ class Pair{
 
 public class SortWithDuplicates {
     /*
-
 Given an integer array with many duplicated elements, efficiently sort it in linear time.
-
 Input : [4, 2, 40, 10, 10, 1, 4, 2, 1, 10, 40]
 Output: [1, 1, 2, 2, 4, 4, 10, 10, 10, 40, 40]
-
 Constraints:
-
 • The input elements lie in the range [0, 1000].
 • The relative order of equal elements doesn't matter.
-
 */
 
     public static void sort(int[] nums){

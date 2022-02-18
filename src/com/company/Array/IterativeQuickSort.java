@@ -4,15 +4,11 @@ import java.util.Stack;
 
 public class IterativeQuickSort {
     /*
-
     Given an integer array, inplace sort it without using any inbuilt functions.
-
     Input : [6, 3, 4, 8, 2, 9]
     Output: [2, 3, 4, 6, 8, 9]
-
     Input : [9, -3, 5, -2, -8, -6]
     Output: [-8, -6, -3, -2, 5, 9]
-
     */
     public static void sort(int[] nums){
         if (nums.length < 1)
