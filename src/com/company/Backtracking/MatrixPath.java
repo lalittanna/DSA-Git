@@ -5,13 +5,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class MatrixPath4 {
+public class MatrixPath {
     /*
 
-    Given an `M × N` integer matrix, find all paths from the first cell to the last cell. You are only allowed to move down or to the right from the current cell.
+    Given an `M × N` integer matrix, return all paths that start at the first cell (0, 0) and ends at the last cell (M-1, N-1). You are allowed to move down, right, or diagonally (down-right), but not up or left.
 
     Input:
-
     [
         [1, 2, 3],
         [4, 5, 6],
@@ -21,12 +20,19 @@ public class MatrixPath4 {
     Output:
 
     {
-        [1, 2, 3, 6, 9],
-        [1, 2, 5, 6, 9],
-        [1, 2, 5, 8, 9],
-        [1, 4, 5, 6, 9],
+        [1, 4, 7, 8, 9],
         [1, 4, 5, 8, 9],
-        [1, 4, 7, 8, 9]
+        [1, 4, 5, 6, 9],
+        [1, 4, 5, 9],
+        [1, 4, 8, 9],
+        [1, 2, 5, 8, 9],
+        [1, 2, 5, 6, 9],
+        [1, 2, 5, 9],
+        [1, 2, 3, 6, 9],
+        [1, 2, 6, 9],
+        [1, 5, 8, 9],
+        [1, 5, 6, 9],
+        [1, 5, 9]
     }
 
     */
@@ -46,17 +52,12 @@ public class MatrixPath4 {
         if (i == mat.length - 1 && j == mat[i].length - 1){
             List<Integer> path = new ArrayList<>(list);
             paths.add(path);
-            list.remove(list.size() - 1);
-            return;
+        } else {
+            if (i + 1 < mat.length) allPaths(paths, mat, list, i + 1, j);
+            if (j + 1 < mat[i].length) allPaths(paths, mat, list, i, j + 1);
+            if (i + 1 < mat.length && j + 1 < mat[i].length) allPaths(paths, mat, list, i + 1, j + 1);
         }
 
-        if (isSafe(mat, i + 1, j)) allPaths(paths, mat, list, i + 1, j);
-        if (isSafe(mat, i, j + 1)) allPaths(paths, mat, list, i, j + 1);
-
         list.remove(list.size() - 1);
-    }
-
-    public static boolean isSafe(int[][] mat, int i, int j){
-        return (i < mat.length && j < mat[i].length);
     }
 }
