@@ -35,14 +35,13 @@ public class Combinations5 {
         }
 
         for (int i = j; i <= n; i++){
-            if (n - i >= 0){
-                list.add(i);
+            if (n - i < 0) break;
 
-                combinations(combinations, list, i, n - i);
+            list.add(i);
 
-                list.remove(list.size() - 1);
-            } else
-                break;
+            combinations(combinations, list, i, n - i);
+
+            list.remove(list.size() - 1);
         }
     }
 }
