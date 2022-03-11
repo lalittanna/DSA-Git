@@ -28,8 +28,8 @@ public class KnightTourProblem {
     Note: To get the string representation of a knight tour stored in int[][] or List<List<Integer>>, you can call `Arrays.deepToString()` or `toString()` method, respectively.
 
     */
-    public static final int[] row = { 2, 1, -1, -2, -2, -1, 1, 2, 2 };
-    public static final int[] col = { 1, 2, 2, 1, -1, -2, -2, -1, 1 };
+    public static final int[] row = { 2, 1, -1, -2, -2, -1, 1, 2 };
+    public static final int[] col = { 1, 2, 2, 1, -1, -2, -2, -1 };
 
     public static Set<String> knightTours(int n){
         Set<String> result = new HashSet<>();
